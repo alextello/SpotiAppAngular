@@ -26,10 +26,14 @@ export class SpotifyService {
                  }));
    }
 
-   getArtista(termino: string) {
+   getArtistas(termino: string) {
     return this.getQuery(`search?q=${ termino }&type=artist&limit=15`)
               .pipe( map( (data: any) => {
                 return data.artists.items;
               }));
+   }
+
+   getArtista(id: string) {
+    return this.getQuery(`artists/${ id }`);
    }
 }
