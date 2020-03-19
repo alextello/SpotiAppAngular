@@ -1,2 +1,12 @@
+<div *ngIf="error" class="alert alert-danger alert-dismissible fade show my-5" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    <strong>Ha ocurrido un error</strong>
+    <p>{{mensajeError}}</p>
+</div>
 <app-loading *ngIf="loading"></app-loading>
+<script>
+    $(".alert").alert();
+</script>
 <app-tarjetas [items]="nuevasCanciones"></app-tarjetas>
